@@ -1,5 +1,5 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.experimental.configFile": "packages/ui/src/styles/globals.css",
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -31,5 +31,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.biome": "explicit",
     "source.organizeImports.biome": "explicit"
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
