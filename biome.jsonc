@@ -1,34 +1,38 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": [
+    "ultracite/core",
+    "ultracite/next",
+    "ultracite/react",
+    "ultracite/astro"
+  ],
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
-  "files": {
-    "ignoreUnknown": false
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2
-  },
   "linter": {
-    "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "performance": {
+        "noNamespaceImport": "off"
+      },
+      "style": {
+        "useConsistentTypeDefinitions": {
+          "level": "warn",
+          "fix": "safe",
+          "options": { "style": "interface" }
+        }
+      },
+      "nursery": {
+        "noShadow": "off"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": {
+          "level": "error",
+          "options": { "maxAllowedComplexity": 20 }
+        }
+      }
     }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double",
-      "semicolons": "asNeeded"
-    }
-  },
-  "extends": [
-    "ultracite/core",
-    "ultracite/nextjs",
-    "ultracite/react",
-    "ultracite/astro"
-  ]
+  }
 }
